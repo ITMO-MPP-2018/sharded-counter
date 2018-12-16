@@ -24,10 +24,10 @@ public class CounterBenchmark {
     private final Counter c = new CounterImpl();
 
     @Benchmark
-    public int inc() {
+    public void inc() {
         Random r = ThreadLocalRandom.current();
         Blackhole.consumeCPU(r.nextInt(work));
-        return c.getAndAdd(1);
+        c.inc();
     }
 
     public static void main(String[] args) throws RunnerException {

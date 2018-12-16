@@ -12,8 +12,8 @@ public class LinearizabilityTest {
     private Counter c = new CounterImpl();
 
     @Operation
-    public int inc() {
-        return c.getAndAdd(1);
+    public void inc() {
+        c.inc();
     }
 
     @Operation

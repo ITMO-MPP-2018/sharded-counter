@@ -13,9 +13,10 @@ public class FunctionalTest {
     public void test() {
         Counter c = new CounterImpl();
         assertEquals(0, c.get());
-        assertEquals(0, c.getAndAdd(10));
-        assertEquals(10, c.get());
-        assertEquals(10, c.getAndAdd(-10));
-        assertEquals(0, c.get());
+        c.inc();
+        assertEquals(1, c.get());
+        c.inc();
+        c.inc();
+        assertEquals(3, c.get());
     }
 }
